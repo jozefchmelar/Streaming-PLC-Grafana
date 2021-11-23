@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <DUT Name="Data" Id="{7181b1b0-2451-4466-9693-7d343269a9e0}">
+    <Declaration><![CDATA[TYPE
+    Data :
+    STRUCT
+        IncrementDouble : REAL;
+		IncrementInt : INT;
+		
+		DoubleValue:REAL;
+		IntValue : INT;
+		Recipe : STRING;
+    END_STRUCT
+END_TYPE
+
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

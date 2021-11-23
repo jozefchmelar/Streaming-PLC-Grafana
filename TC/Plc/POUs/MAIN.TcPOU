@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="MAIN" Id="{8e76f846-6942-4b23-a87f-e1446ff67c07}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	Data :Data;
+	Math : Math;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Data.IncrementDouble := 0.005;
+Data.IncrementInt := 1;
+Data.DoubleValue := Data.DoubleValue + Data.IncrementDouble ;
+if Data.DoubleValue >= 3.141592653 then
+//	Data.DoubleValue := 0;
+end_if; 
+Data.IntValue := ABS(LREAL_TO_INT(Data.DoubleValue*100)) MOD 1000;
+ 
+Math.Sinus := SIN(Data.DoubleValue);
+Math.NegativeSinus := SIN(-Data.DoubleValue);
+Math.Cosinus := COS(Data.DoubleValue);
+Math.Tangent := TAN(Data.DoubleValue);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
